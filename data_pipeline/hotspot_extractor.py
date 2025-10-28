@@ -26,6 +26,7 @@ class HotspotExtractor:
     def _parse_geojson(self, geojson_data: Dict) -> List[Dict]:
         """Parse GeoJSON format extracting comprehensive crash properties."""
         records = []
+        # Extract crash data from each feature in the GeoJSON
         for feature in geojson_data.get('features', []):
             props = feature.get('properties', {})
             geom = feature.get('geometry', {})
