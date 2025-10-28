@@ -40,6 +40,7 @@ def compute_metrics(eval_pred):
     Returns:
         Dictionary with accuracy and f1 metrics
     """
+    # Get predicted class by taking argmax of model outputs
     predictions = np.argmax(eval_pred.predictions, axis=1)
     references = eval_pred.label_ids
     
